@@ -10,4 +10,9 @@ from django.contrib import admin
 from .models import Osoba, Stanowisko
 
 admin.site.register(Stanowisko)
-admin.site.register(Osoba)
+
+class OsobaAdmin(admin.ModelAdmin):
+    list_display = ("imie","nazwisko","plec","stanowisko","data_dodania")
+    fields = ("imie","nazwisko","plec","stanowisko")
+
+admin.site.register(Osoba, OsobaAdmin)
