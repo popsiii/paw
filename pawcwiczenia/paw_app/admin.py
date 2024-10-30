@@ -15,5 +15,6 @@ class OsobaAdmin(admin.ModelAdmin):
     list_display = ("imie","nazwisko","plec","stanowisko","data_dodania")
     fields = ("imie","nazwisko","plec","stanowisko")
     readonly_fields = ("data_dodania", )
+    search_fields = ("imie", "nazwisko")
 
 admin.site.register(Osoba, OsobaAdmin)
